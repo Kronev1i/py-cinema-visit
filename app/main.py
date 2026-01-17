@@ -13,7 +13,6 @@ def cinema_visit(movie: str,
         customer = Customer(name=data["name"], food=data["food"])
         customer_objects.append(customer)
         CinemaBar.sell_product(product=customer.food, customer=customer)
-
     hall = CinemaHall(hall_number)
     cleaner_obj = Cleaner(cleaner)
     hall.movie_session(
@@ -21,10 +20,8 @@ def cinema_visit(movie: str,
         customers=customer_objects,
         cleaning_staff=cleaner_obj
     )
-
-
     hall.movie_session(
         movie_name=movie,
-        customers=customer_object,
+        customers=customer_objects,
         cleaning_staff=cleaner_obj
     )
